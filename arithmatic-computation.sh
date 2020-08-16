@@ -17,3 +17,9 @@ exp4=$(($vara%$varb+$varc))
 
 sorting=([0]=$exp1 [1]=$exp2 [2]=$exp3 [3]=$exp4)
 	echo "${sorting[@]}
+
+for values in $sorting
+do
+   echo "${sorting[@]}"
+done | sort
+	echo ${sorting[@]}
