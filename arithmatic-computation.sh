@@ -1,4 +1,5 @@
 #!/bin/bash -x
+
 declare -A sorting
 
 read -p "Enter the value  of a = " vara
