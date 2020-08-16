@@ -8,3 +8,5 @@ exp1=$(($vara+$varb*$varc))
 	echo " a+b*c = " $exp1
 exp2=$(($vara*$varb+$varc))
    echo " a*b+c = " $exp2
+exp3=$(($varc+$vara/$varb))
+   echo " a+b/c = " $exp3
