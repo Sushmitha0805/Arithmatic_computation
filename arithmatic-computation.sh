@@ -1,5 +1,5 @@
 
-#!bin/bash -x
+#!/bin/bash -x
 declare -A sorting
 
 read -p "Enter the value  of a = " vara
@@ -16,7 +16,7 @@ exp4=$(($vara%$varb+$varc))
 
 
 sorting=([0]=$exp1 [1]=$exp2 [2]=$exp3 [3]=$exp4)
-	echo "${sorting[@]}
+	echo "${sorting[@]}"
 
 for values in $sorting
 do
