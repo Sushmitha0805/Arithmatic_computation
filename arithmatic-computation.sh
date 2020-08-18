@@ -1,26 +1,68 @@
-#!/bin/bash -x
+#!/bin/bash
 
 declare -A sorting
 
-read -p "Enter the value  of a = " vara
-read -p "Enter the value  of b = " varb
-read -p "Enter the value  of c = " varc
+read -p "Enter the value  of a = " varA
+read -p "Enter the value  of b = " varB
+read -p "Enter the value  of c = " varC
 
-exp1=$(($vara+$varb*$varc))
-	echo " a+b*c = " $exp1
-exp2=$(($vara*$varb+$varc))
-   echo " a*b+c = " $exp2
-exp3=$(($varc+$vara/$varb))
-   echo " a+b/c = " $exp3
-exp4=$(($vara%$varb+$varc))
-   echo " a%b+c = " $exp4
+res1=$(($varA+$varB*$varC))
+   echo " a+b*c = " $res1
+res2=$(($varA*$varB+$varC))
+   echo " a*b+c = " $res2
+res3=$(($varA+$varB/$varC))
+   echo " a+b/c = " $res3
+res4=$(($varA%$varB+$varC))
+   echo " a%b+c = " $res4
 
 
-sorting=([0]=$exp1 [1]=$exp2 [2]=$exp3 [3]=$exp4)
-	echo "${sorting[@]}"
+sorting=([1]="$res1" [2]="$res2" [3]="$res3" [4]="$res4")
+   echo ${sorting[@]}
 
-for values in $sorting
+for(( i=0; i<=4; i++ ))
 do
-   echo "${sorting[@]}"
-done | sort
-	echo ${sorting[@]}
+     arr[i]=${sorting[$i]}
+     echo "${arr[i]}"
+done
+
+
+function sortDecendingOrder()
+{
+   for (( i=0; i<=4; i++ ))
+   do
+      for (( j=$i+1; j<=4; j++ ))
+      do
+         if [[ ${arr[i]} -lt ${arr[j]} ]]
+         then
+              temp=${arr[i]}
+              arr[i]=${arr[j]}
+              arr[j]=$temp
+         fi
+      done
+   done
+   echo "desending order" ${arr[@]}
+}
+function sortAscendingOrder()
+{
+   for (( i=0; i<=4; i++ ))
+   do
+      for (( j=$i+1; j<=4; j++ ))
+      do
+         if [[ ${arr[i]} -gt ${arr[j]} ]]
+         then                                                                                                                                                                                  >
+              arr[i]=${arr[j]}
+              arr[j]=$temp
+         fi
+      done
+   done
+              echo  " ascending order "${arr[@]}
+}
+
+sortAscendingOrder
+
+
+sortDecendingOrder
+
+
+	
+
